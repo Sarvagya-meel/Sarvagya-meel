@@ -1,0 +1,167 @@
+.about {
+  .skill-assessment {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: var(--background-secondary);
+    border-radius: 5px;
+
+    .circular-progress {
+      .override-progress {
+        stroke: var(--circular-progress-primary);
+      }
+
+      .override-trail {
+        stroke: var(--circular-progress-secondary);
+      }
+
+      .override-progress-text {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 600;
+        font-size: 24px;
+        fill: var(--secondary-color) !important;
+        text-align: center;
+      }
+
+      .progress-label {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        color: var(--tertiary-color);
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .about-details {
+    display: grid;
+    grid-template-columns: 33% auto;
+    margin-top: 50px;
+
+    .display-picture {
+      background-color: var(--background-secondary);
+      border-radius: 5px;
+      text-transform: uppercase;
+      padding: 2.5em 0.75em 0 0.75em;
+      position: relative;
+
+      img {
+        height: 100%;
+      }
+
+      .download-cv {
+        border-radius: 5px;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 600;
+        font-size: 16px;
+        color: $white;
+        background-color: $primary-color;
+        padding-top: 0.75em;
+        padding-bottom: 0.75em;
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+      }
+    }
+
+    .details {
+      padding-top: 12px;
+      padding-left: 95px;
+
+      .myContent-main {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 40px;
+        padding-bottom: 2.7em;
+        border-radius: 10px;
+        color: var(--secondary-color);
+      }
+
+      .seperator {
+        width: 25%;
+        height: 5px;
+        border-bottom: 5px;
+        border-radius: 2px;
+        border: solid $primary-color;
+      }
+
+      .myContent-sub {
+        margin-top: 2.7em;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 40px;
+        color: var(--tertiary-color);
+      }
+
+      .contact-details {
+        margin-top: 2.7em;
+
+        .contact-icons {
+          font-family: 'Open Sans', sans-serif;
+          font-weight: 400;
+          color: var(--secondary-color);
+
+          &:hover {
+            color: $primary-color !important;
+
+            .a {
+              fill: $primary-color !important;
+            }
+          }
+
+          span {
+            margin-left: 12px;
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width : 768px) {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    .skill-assessment {
+      padding: 20px 12px;
+      flex-wrap: wrap;
+      .circular-progress {
+        flex-basis: 50%;
+        padding: 20px 12px;
+        text-align: center;
+      }
+    }
+    .about-details {
+      display: block;
+      .details{
+        padding-top: 50px;
+        padding-left: 0px;
+        .myContent-main{
+          font-size: 14px;
+          line-height: 25px;
+          padding-bottom: 1.5rem;
+        }
+        .myContent-sub{
+          font-size: 16px;
+          line-height: 25px;
+          margin-top: 1.5rem;
+        }
+        .contact-details{
+          display: block !important;
+        }
+      }
+    }
+  }
+}
+
+[data-theme='dark'] {
+  .contact-details {
+    .contact-icons {
+      color: $white !important;
+
+      .a {
+        fill: $white !important;
+      }
+    }
+  }
+}

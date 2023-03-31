@@ -1,0 +1,111 @@
+@include fade-move-down-mixin('scroll_arrow_animation', 0, 6px);
+
+.home {
+  background-image: url('/images/home-background.png');
+  padding-top: 5em;
+  padding-bottom: 4em;
+  position: relative;
+
+  .misc-content {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    color: var(--tertiary-color);
+    text-align: center;
+  }
+
+  .name {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 40px;
+    color: var(--secondary-color);
+    text-align: center;
+    text-transform: capitalize;
+  }
+
+  .role {
+    font-family: 'Fira Code', monospace;
+    font-size: 48px;
+    color: var(--primary-color);
+    text-align: center;
+    text-transform: capitalize;
+  }
+
+  .developer-icons {
+    svg {
+      .a {
+        fill: $primary-color-light;
+      }
+
+      .b {
+        fill: $primary-color;
+      }
+    }
+  }
+
+  .scroll-down-container {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 32px;
+    height: 32px;
+    transform: translate(-50%, 50%);
+    background-color: $primary-color;
+    border-radius: 50%;
+
+    svg {
+      -webkit-animation: scroll_arrow_animation 2s ease-in-out infinite;
+      -moz-animation: scroll_arrow_animation 2s ease-in-out infinite;
+      animation: scroll_arrow_animation 2s ease-in-out infinite;
+      .a {
+        opacity: 0;
+      }
+
+      .c {
+        stroke-width: 0px;
+      }
+    }
+  }
+
+  @media only screen and (max-width : 768px) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    .misc-content{
+      font-size: 14px;
+    }
+    .name, .role{
+      font-size: 24px;
+    }
+    .developer-icons{
+      display: block !important;
+      svg {
+        width: 100px;
+        height: 100px;
+        display: block;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        & + svg {
+          margin-top: 28px;
+          
+        }
+      }
+    }
+  }
+}
+
+/** Darh Theme Customization **/
+[data-theme='dark'] {
+  .home {
+    .developer-icons {
+      svg {
+        .a {
+          fill: $primary-color;
+        }
+
+        .b {
+          fill: $white;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,130 @@
+.header {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  box-shadow: 0px 3px 6px #0000001a;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: var(--background-primary);
+
+  .nav-link {
+    color: var(--inactive-anchor);
+    text-transform: uppercase;
+    line-height: normal;
+    padding-bottom: 5px;
+
+    &:hover {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+
+    &.active {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+  }
+
+  .underline-from-left {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    overflow: hidden;
+    &:before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      left: 0;
+      right: 100%;
+      bottom: 0;
+      background: var(--primary-color);
+      height: 3px;
+      border-radius: 10% 0px;
+      -webkit-transition-property: right;
+      transition-property: right;
+      -webkit-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+      -webkit-transition-timing-function: ease-out;
+      transition-timing-function: ease-out;
+    }
+    &:hover:before {
+      right: 0;
+    }
+  }
+
+  img {
+    cursor: pointer;
+  }
+
+  .theme-switch{
+    width: 30px;
+    height: 30px;
+  }
+
+  // tab
+  @media only screen and (min-width : 767px) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    .nav-list{
+      li {
+        & + li {
+          margin-left: 2rem;
+        }
+      }
+    }
+    .header-container{
+      padding: 0 2rem;
+    }
+  }
+
+  // desktop-sm
+  @media only screen and (min-width : 1024px) {
+    font-size: 18px;
+    .nav-list{
+      li {
+        & + li {
+          margin-left: 4rem;
+        }
+      }
+    }
+  }
+
+  // mobile
+  @media only screen and (max-width : 768px) {
+    .menu-icon, .theme-switch{
+      width: 24px;
+      height: 24px;
+    }
+
+    .nav-list{
+      position: absolute;
+      bottom: 0;
+      background-color: var(--background-secondary);
+      color: var(--tertiary-color);
+      border-radius: 3px;
+      left: 0;
+      transform: translateY(100%);
+      display: block !important;
+      width: 100%;
+      padding: 1.5rem 1rem;
+      li {
+        & + li {
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+}
+
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
+
+
+[data-theme='dark'] .menu-icon .cls-2 {
+  fill: #fff;
+}
